@@ -17,7 +17,7 @@ export class MoongoUserRepository implements UserRepository {
     throw new Error('Method not implemented.');
   }
   public async findAll(): Promise<UserModel[]> {
-    return await this.userModel.find();
+    return await this.userModel.find<UserModel>({});
   }
   public findById(userId: string): Promise<UserModel | null> {
     throw new Error('Method not implemented.');
