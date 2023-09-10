@@ -12,7 +12,7 @@ export abstract class UserMapper {
     };
   }
 
-  public static toDtowithoutPassword(user: UserEntity): UserWithoutPasswordDto {
+  public static toDtoWithoutPassword(user: UserEntity): UserWithoutPasswordDto {
     return {
       userId: user.userId,
       name: user.name,

@@ -12,6 +12,6 @@ export class GetAllUsersUseCase {
   public async run(): Promise<UserWithoutPasswordDto[]> {
     const users = await this.repository.findAll();
 
-    return users.map((user) => UserMapper.toDtowithoutPassword(user));
+    return users.map((user) => UserMapper.toDtoWithoutPassword(user));
   }
 }

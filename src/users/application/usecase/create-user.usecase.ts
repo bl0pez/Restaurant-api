@@ -23,6 +23,6 @@ export class CreateUserUseCase {
       password: bcrypt.hashSync(data.password as string, 10),
     };
 
-    return UserMapper.toDtowithoutPassword(await this.repository.save(user));
+    return UserMapper.toDtoWithoutPassword(await this.repository.save(user));
   }
 }
