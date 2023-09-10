@@ -1,9 +1,9 @@
-import { UserModel } from '../model/user.model';
+import { UserEntity } from '../entity/user.entity';
 
 export interface UserRepository {
-  save(user: Omit<UserModel, 'userId'>): Promise<UserModel>;
-  findAll(): Promise<UserModel[]>;
-  findById(userId: string): Promise<UserModel | null>;
-  deleteById(userId: string): Promise<void>;
-  findByEmail(email: string): Promise<UserModel | null>;
+  save(user: UserEntity): Promise<UserEntity>;
+  findAll(): Promise<UserEntity[]>;
+  findById(userId: string): Promise<UserEntity | null>;
+  findByEmail(email: string): Promise<UserEntity | null>;
+  delete(userId: string): Promise<void>;
 }
