@@ -18,7 +18,7 @@ export class MongoUserRepository implements UserRepository {
   }
 
   public findById(userId: string): Promise<UserEntity | null> {
-    throw new Error('Method not implemented.');
+    return this.userModel.findById(userId).exec();
   }
 
   public findByEmail(email: string): Promise<UserEntity | null> {
