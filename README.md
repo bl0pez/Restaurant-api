@@ -6,5 +6,19 @@
 
 1. Clone the repository
 2. Install the dependencies with `npm install`
-3. Clone .env.example to .env and fill the variables
-4. Run project with `npm run start:dev`
+3. Run the server with `npm run start:dev`
+
+# Estrura de carpetas
+
+```
+src
+├── Common
+│   ├── DTOs
+│   │   ├── create-user.dto.ts // DTO para crear un usuario
+│   ├── Entities
+│   │   ├── user.entity.ts // Entidad de usuario
+│   ├── Repositories
+│   │   ├── orm-user.interface.ts // Interfaz de usuario
+│   │   ├── orm-user.repository.ts // Repositorio de usuario
+├── app.module.ts
+├── main.ts
