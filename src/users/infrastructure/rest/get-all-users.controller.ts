@@ -5,7 +5,7 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { UserDto } from '../dto/user.dto';
 
 @ApiTags('users')
-@Controller('api/v1/users')
+@Controller('users')
 export class GetAllUsersController {
   constructor(
     @Inject(GetAllUsersUseCase)

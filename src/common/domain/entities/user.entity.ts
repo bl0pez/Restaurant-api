@@ -14,10 +14,10 @@ export class UserEntity {
   @Column({ name: 'name', type: 'varchar', length: 255 })
   name: string;
 
-  @Column({ name: 'email', type: 'varchar', length: 255 })
+  @Column({ name: 'email', type: 'varchar', length: 255, unique: true })
   email: string;
 
-  @Column({ name: 'role', type: 'varchar', length: 255 })
+  @Column({ name: 'role', type: 'varchar', length: 255, default: 'user' })
   role: string;
 
   @Column({ name: 'password', type: 'varchar', length: 255 })

@@ -1,12 +1,12 @@
 export interface IUserCreateRepositoryDto {
-  name: string;
   email: string;
-  role: string;
+  name: string;
   password: string;
 }
 
 export interface IUserRepositoryDto extends IUserCreateRepositoryDto {
-  userId: string;
   createdAt: Date;
+  role: string;
   updatedAt: Date;
+  userId: string;
 }

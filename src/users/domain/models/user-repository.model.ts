@@ -10,5 +10,5 @@ export interface IUserRepositoryModel {
 
 export type ISaveUserRepositoryModel = Omit<
   IUserRepositoryModel,
-  'userId' | 'createdAt' | 'updatedAt'
+  'userId' | 'createdAt' | 'updatedAt' | 'role'
 >;

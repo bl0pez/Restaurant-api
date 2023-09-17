@@ -3,7 +3,7 @@ import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { CreateUserUseCase } from '../../application/usecase/create-user.usecase';
 import { CreateUserDto, UserDto } from '../dto/user.dto';
 @ApiTags('users')
-@Controller('api/v1/users')
+@Controller('users')
 export class CreateUserController {
   constructor(
     @Inject(CreateUserUseCase)
