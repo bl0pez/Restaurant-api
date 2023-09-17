@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
 import { CONFIG_DATABASE } from './common/infrastructure/config-database';
+import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [CONFIG_DATABASE()],
+  imports: [CONFIG_DATABASE(), UsersModule],
 })
 export class AppModule {}

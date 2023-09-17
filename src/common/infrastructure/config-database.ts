@@ -9,4 +9,5 @@ export const CONFIG_DATABASE = () =>
     password: 'admin',
     database: 'restaurant',
     autoLoadEntities: true,
+    synchronize: true,
   });
