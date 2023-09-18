@@ -1,9 +1,25 @@
-import { UserEntity } from '../entity/user.entity';
+import { Inject, Injectable } from '@nestjs/common';
+import { IOrmUserRepository } from 'src/common/domain/repository/orm-user-repository.interface';
+import { OrmUserRepository } from 'src/common/domain/repository/orm-user.repository';
+import { ICrudUserRepository } from './user.interface';
+import {
+  ISaveUserRepositoryModel,
+  IUserRepositoryModel,
+} from '../models/user-repository.model';
 
-export interface UserRepository {
-  save(user: UserEntity): Promise<UserEntity>;
-  findAll(): Promise<UserEntity[]>;
-  findById(userId: string): Promise<UserEntity | null>;
-  findByEmail(email: string): Promise<UserEntity | null>;
-  delete(userId: string): Promise<void>;
+@Injectable()
+export class UserRepository implements ICrudUserRepository {
+  constructor(
+    @Inject(OrmUserRepository)
+    private readonly ormUserRepository: IOrmUserRepository,
+  ) {}
+  public saveUser(
+    createUser: ISaveUserRepositoryModel,
+  ): Promise<IUserRepositoryModel> {
+    return this.ormUserRepository.saveUser(createUser);
+  }
+
+  public getAllUsers(): Promise<IUserRepositoryModel[]> {
+    return this.ormUserRepository.findAllUsers();
+  }
 }
