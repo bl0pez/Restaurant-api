@@ -22,7 +22,7 @@ export class MongoUserRepository implements UserRepository {
   }
 
   public findByEmail(email: string): Promise<UserEntity | null> {
-    throw new Error('Method not implemented.');
+    return this.userModel.findOne({ email }).exec();
   }
 
   public delete(userId: string): Promise<void> {

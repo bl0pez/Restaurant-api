@@ -8,6 +8,8 @@ import { GetAllUsersController } from './infastructure/rest/get-all-users.contro
 import { GetAllUsersUseCase } from './application/usecase/get-all-users.usecase';
 import { GetUserByIdController } from './infastructure/rest/get-user-by-id.controller';
 import { GetUserByIdUseCase } from './application/usecase/get-user-by-id.usecase';
+import { GetUserByEmailController } from './infastructure/rest/get-user-by-email.controller';
+import { GetUserByEmailUseCase } from './application/usecase/get-user-by-email.usecase';
 
 @Module({
   imports: [
@@ -17,11 +19,13 @@ import { GetUserByIdUseCase } from './application/usecase/get-user-by-id.usecase
     CreateUserController,
     GetAllUsersController,
     GetUserByIdController,
+    GetUserByEmailController,
   ],
   providers: [
     CreateUserUseCase,
     GetAllUsersUseCase,
     GetUserByIdUseCase,
+    GetUserByEmailUseCase,
     {
       provide: 'USER_REPOSITORY',
       useClass: MongoUserRepository,
